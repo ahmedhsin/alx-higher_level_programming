@@ -6,7 +6,7 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t curr = list;
+	listint_t *curr = list;
 
 	while (curr)
 	{
