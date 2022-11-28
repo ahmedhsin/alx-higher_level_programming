@@ -1,3 +1,4 @@
+#include "list.h"
 /**
  * check_cycle - fun
  * @list: lol
