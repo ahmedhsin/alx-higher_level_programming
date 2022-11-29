@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 /**
  * insert_node - add to list
