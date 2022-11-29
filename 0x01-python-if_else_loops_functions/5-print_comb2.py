@@ -2,8 +2,8 @@
 strs = ', '
 for i in range(100):
     if i < 10:
-        print(f"0{i}", end=', ')
+        print("0{}".format(i), end=', ')
     else:
         if i == 99:
             strs = '\n'
-        print(f"{i}", end=strs)
+        print("{}".format(i), end=strs)
