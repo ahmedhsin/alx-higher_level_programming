@@ -3,8 +3,10 @@ def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     for i in range(list_length):
         try:
-            if int(my_list_1[i]) % int(my_list_2[i]) == 0:
-                new_list.append(int(my_list_1[i]) / int(my_list_2[i]))
+            val1 = int(my_list_1[i])
+            val2 = int(my_list_2[i])
+            if max(val1, val2) % min(val1, val2) == 0:
+                new_list.append(max(val1, val2) / min(val1, val2))
             else:
                 new_list.append(0)
         except ZeroDivisionError:
