@@ -43,8 +43,8 @@ class Square:
     def position(self, position):
         """set position and some constraint"""
         instance = isinstance(position, tuple)
-        length = len(position) == 2
-        if not instance or not length or position[0] < 0 or position[1] < 0:
+        length = len(position)
+        if not instance or length != 2 or position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
