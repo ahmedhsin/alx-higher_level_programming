@@ -68,8 +68,10 @@ class SinglyLinkedList:
     def __str__(self):
         """overriddin __str__ method from object class"""
         current = self.__head
+        if current is None:
+            return ""
         ans = ""
         while current is not None:
-            ans =  ans + str(current.data) + '\n'
+            ans = ans + str(current.data) + '\n'
             current = current.next_n
         return ans[:-1]
