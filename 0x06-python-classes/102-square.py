@@ -40,32 +40,37 @@ class Square:
         """
         Area = self.__size * self.__size
         return Area
+
     def __eq__(self, other):
         """equality method override"""
         if isinstance(other, Square):
             return self.size == other.size
         return False
+
     def __ne__(self, other):
         """not equality method"""
         return not self.__eq__(other)
+
     def __gt__(self, other):
         """greater than method"""
         if isinstance(other, Square):
             return self.size > other.size
         return False
+
     def __lt__(self, other):
         """less than method"""
         if isinstance(other, Square):
             return self.size < other.size
         return False
+
     def __ge__(self, other):
         """greater or equal"""
         if isinstance(other, Square):
             return self.size > other.size or self.__eq__(other)
         return False
+
     def __le__(self, other):
         """less than or equal"""
         if isinstance(other, Square):
             return self.size < other.size or self.__eq__(other)
         return False
-
