@@ -5,8 +5,8 @@
 class Node:
     """Represent of node"""
     def __init__(self, data, next_n=None):
-        self.__data = data
-        self.__next_n = next_n
+        self.data = data
+        self.next_n = next_n
 
     @property
     def data(self):
@@ -16,7 +16,7 @@ class Node:
     @data.setter
     def data(self, value):
         """special setter for data"""
-        if isinstance(value, int):
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
