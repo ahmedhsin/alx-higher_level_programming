@@ -16,7 +16,7 @@ class Node:
     @data.setter
     def data(self, value):
         """special setter for data"""
-        if not isinstance(value, int):
+        if isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
