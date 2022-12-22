@@ -46,6 +46,8 @@ class SinglyLinkedList:
             Args:
                 value (Node) : instance of Node
         """
+        if value is not None and not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
         new = Node(value)
         if self.__head is None:
             self.__head = new
