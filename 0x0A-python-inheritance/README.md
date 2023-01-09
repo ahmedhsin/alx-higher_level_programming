@@ -1,0 +1,1 @@
+# Inheritance in py is ?????? comparing to other lang
