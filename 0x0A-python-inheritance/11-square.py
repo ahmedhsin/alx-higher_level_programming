@@ -13,4 +13,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """ovrride str fun"""
-        return "[Square] {}/{}".format(self.__width, self.__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
