@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Advanced Task"""
 
+
 class MyInt(int):
     def __init__(self, x):
         if (type(x) != int):
