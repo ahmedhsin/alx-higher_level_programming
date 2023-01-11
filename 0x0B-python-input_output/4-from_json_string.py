@@ -4,5 +4,5 @@ import json
 
 
 def from_json_string(my_str):
-    """json to object"""
+    """Json To obj fun"""
     return json.loads(my_str, sort_keys=True)
