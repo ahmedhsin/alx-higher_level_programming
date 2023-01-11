@@ -9,10 +9,15 @@ def main():
     """script for add/rem"""
 
     path = "add_item.json"
-    obj = load_from_json_file(path)
-    with open(path, 'w+', encoding="utf-8") as f:
-        del sys.argv[0]
-        for i in sys.argv:
-            obj.append(i)
+    try:
+        obj = load_from_json_file(path)
+    except Exception:
+        obj = []
+
+    del sys.argv[0]
+    for i in sys.argv:
+        obj.append(i)
+    save_to_json_file(path, f)
+
 
 main()
