@@ -17,7 +17,7 @@ def main():
     del sys.argv[0]
     for i in sys.argv:
         obj.append(i)
-    save_to_json_file(path, f)
+    save_to_json_file(obj, path)
 
 
 main()
