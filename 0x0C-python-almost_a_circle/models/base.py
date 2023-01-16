@@ -49,7 +49,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create object function takes **kargs"""
-        dummyobject = cls(1, 1, 0, 0, -1)
+        dummyobject = cls(9999, 9999)
         dummyobject.update(**dictionary)
         return dummyobject
 
