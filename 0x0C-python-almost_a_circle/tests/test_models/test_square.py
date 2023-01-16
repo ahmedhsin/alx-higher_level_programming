@@ -2,8 +2,8 @@
 """Square class unittest"""
 import sys
 
-sys.path.append(
-    "/home/yuu/alx-higher_level_programming/0x0C-python-almost_a_circle/")
+#sys.path.append(
+#    "/home/yuu/alx-higher_level_programming/0x0C-python-almost_a_circle/")
 import unittest
 from models.square import Square
 from models.base import Base
