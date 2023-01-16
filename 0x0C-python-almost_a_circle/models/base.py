@@ -2,7 +2,8 @@
 
 """Base Class"""
 
-import json, csv
+import json
+import csv
 
 
 class Base:
@@ -38,6 +39,7 @@ class Base:
                     dictionaries.append(i.to_dictionary())
                 data = Base.to_json_string(dictionaries)
                 file.write(data)
+
     @staticmethod
     def from_json_string(json_string):
         """from_json_string static function"""
@@ -72,6 +74,7 @@ class Base:
 
         finally:
             return objects_list
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Save to file csv"""
@@ -95,8 +98,13 @@ class Base:
                     height = int(row[2])
                     x = int(row[3])
                     y = int(row[4])
-                    di = {'width':width, 'height':height,
-                        'x':x, 'y':y, 'id':id}
+                    di = {
+                        'width': width,
+                        'height': height,
+                        'x': x,
+                        'y': y,
+                        'id': id,
+                        }
                     list_objects.append(cls.create(**di))
         except Exception:
             return []
