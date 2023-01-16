@@ -63,7 +63,7 @@ class Base:
         try:
             filename = cls.__name__ + '.json'
             with open(filename, 'r', encoding='utf-8') as file:
-                dictionary_list = json.load(file)
+                dictionary_list = from_json_string(file.read())
                 for i in dictionary_list:
                     objects_list.append(cls.create(**i))
         except Exception:
