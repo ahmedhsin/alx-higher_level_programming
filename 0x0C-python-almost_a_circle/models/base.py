@@ -49,7 +49,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create object function takes **kargs"""
-        dummyobject = cls(9999, 9999)
+        if cls.__name__ == 'Rectangle':
+            dummyobject = cls(1, 1)
+        else:
+            dummyobject = cls(1)
         dummyobject.update(**dictionary)
         return dummyobject
 
