@@ -74,7 +74,7 @@ class Rectangle(Base):
 
     def display(self):
         """Print on screen"""
-        # print('\n' * self.y, end="")
+        print('\n' * self.y, end="")
         for i in range(self.__height):
             print(" " * self.x, end="")
             print("{}".format(self.__width * "#"))
