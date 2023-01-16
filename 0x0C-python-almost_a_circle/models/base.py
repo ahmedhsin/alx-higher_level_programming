@@ -32,7 +32,7 @@ class Base:
         with open(filename, 'w', encoding='utf-8') as file:
             dictionaries = []
             if list_objs is None:
-                pass
+                file.write('[]')
             else:
                 for i in list_objs:
                     dictionaries.append(i.to_dictionary())
