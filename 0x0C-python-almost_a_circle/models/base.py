@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
 
 """Base Class"""
 
@@ -8,7 +7,7 @@ import json
 
 class Base:
 
-    """Base Class specifi"""
+    """Base Class specifi for all rectangle and square"""
 
     __nb_objects = 0
 
@@ -21,14 +20,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """to json function"""
+        """to json function function with list para"""
         if list_dictionaries is None:
             return '[]'
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save_to_file"""
+        """save_to_file class function take list"""
         filename = cls.__name__ + '.json'
         with open(filename, 'w', encoding='utf-8') as file:
             dictionaries = []
@@ -41,7 +40,7 @@ class Base:
                 file.write(data)
 
     def from_json_string(json_string):
-        """from_json_string"""
+        """from_json_string static function"""
         if json_string is None:
             return []
         else:
@@ -49,14 +48,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """create object"""
+        """create object function takes **kargs"""
         dummyobject = cls(3, 5, 1, 0, 1)
         dummyobject.update(**dictionary)
         return dummyobject
 
     @classmethod
     def load_from_file(cls):
-        """load from file"""
+        """load from file using json class method"""
         objects_list = []
         try:
             filename = cls.__name__ + '.json'
