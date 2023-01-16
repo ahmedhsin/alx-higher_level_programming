@@ -2,7 +2,7 @@
 
 """Base Class"""
 
-import json
+import json, csv
 
 
 class Base:
@@ -38,7 +38,7 @@ class Base:
                     dictionaries.append(i.to_dictionary())
                 data = Base.to_json_string(dictionaries)
                 file.write(data)
-
+    @staticmethod
     def from_json_string(json_string):
         """from_json_string static function"""
         if json_string is None:
@@ -72,3 +72,33 @@ class Base:
 
         finally:
             return objects_list
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save to file csv"""
+        filename = cls.__name__ + '.csv'
+        with open(filename, 'w', encoding='utf-8') as file:
+            write = csv.writer(file)
+            for i in list_objs:
+                write.writerow([i.id, i.width, i.height, i.x, i.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from file csv"""
+        filename = cls.__name__ + '.csv'
+        list_objects = []
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    id = int(row[0])
+                    width = int(row[1])
+                    height = int(row[2])
+                    x = int(row[3])
+                    y = int(row[4])
+                    di = {'width':width, 'height':height,
+                        'x':x, 'y':y, 'id':id}
+                    list_objects.append(cls.create(**di))
+        except Exception:
+            return []
+        finally:
+            return list_objects

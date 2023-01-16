@@ -73,9 +73,10 @@ class Test_Base(unittest.TestCase):
         Rectangle.save_to_file([r1, r2])
 
         objects = Rectangle.load_from_file()
-        
+
         self.assertEqual(objects[0].to_dictionary(), r1.to_dictionary())
         self.assertEqual(objects[1].to_dictionary(), r2.to_dictionary())
+
 
 
 if __name__ == "__main__":
