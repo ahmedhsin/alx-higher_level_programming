@@ -4,14 +4,11 @@ from MySQLdb import connect
 import sys
 
 
-username = sys.argv[1]
-password = sys.argv[2]
-db_name = sys.argv[3]
-
-
 def main():
     """Main function logic"""
-    con = connect(port=3306, user=username, passwd=password, db=db_name)
+
+    con = connect(port=3306, user=sys.argv[1],
+                  passwd=sys.argv[2], db=sys.argv[3])
     cursor = con.cursor()
     sql = "select id, name from states order by id;"
     cursor.execute(sql)
@@ -21,4 +18,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
