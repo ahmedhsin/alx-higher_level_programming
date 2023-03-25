@@ -12,8 +12,12 @@ def main():
     cursor = con.cursor()
     sql = "select * from states where name like 'N%' order by id asc;"
     cursor.execute(sql)
-    for i in range(cursor.rowcount):
-        print(cursor.fetchone())
+    data = cursor.fetchall()
+    for i in data:
+        print(i)
+
+    cursor.close()
+    con.close()
 
 
 if __name__ == "__main__":

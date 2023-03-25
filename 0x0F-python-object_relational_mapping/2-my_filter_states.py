@@ -13,8 +13,12 @@ def main():
     sql = "select * from states where name = '{}' order by id asc;".format(
         sys.argv[4])
     cursor.execute(sql)
-    for i in range(cursor.rowcount):
-        print(cursor.fetchone())
+    data = cursor.fetchall()
+    for i in data:
+        print(i)
+
+    cursor.close()
+    con.close()
 
 
 if __name__ == "__main__":
