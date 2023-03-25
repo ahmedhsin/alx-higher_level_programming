@@ -14,7 +14,8 @@ def main():
     cursor.execute(sql)
     data = cursor.fetchall()
     for row in data:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     cursor.close()
     con.close()

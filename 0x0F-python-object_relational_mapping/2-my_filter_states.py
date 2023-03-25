@@ -15,7 +15,8 @@ def main():
     cursor.execute(sql)
     data = cursor.fetchall()
     for row in data:
-        print(row)
+        if (row[1][:] == sys.argv[4]):
+            print(row)
 
     cursor.close()
     con.close()
