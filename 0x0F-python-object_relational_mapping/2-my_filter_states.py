@@ -10,12 +10,12 @@ def main():
     con = connect(port=3306, user=sys.argv[1],
                   passwd=sys.argv[2], db=sys.argv[3])
     cursor = con.cursor()
-    sql = "select * from states where name = '{}' order by id asc;".format(
+    sql = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(
         sys.argv[4])
     cursor.execute(sql)
     data = cursor.fetchall()
-    for i in data:
-        print(i)
+    for row in data:
+        print(row)
 
     cursor.close()
     con.close()
