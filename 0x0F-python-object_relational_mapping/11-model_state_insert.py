@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetch one unit of data using sqlalchemy"""
+"""add data using sqlalchemy"""
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -12,9 +12,9 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).order_by(State.id).first()
-    if (row is None):
-        print("Nothing")
-    else:
-        print('{}: {}'.format(row.id, row.name))
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    new_state = session.query(State).filter_by(name='Louisiana').first()
+    print(new_state.id)
+    session.commit()
     session.close()

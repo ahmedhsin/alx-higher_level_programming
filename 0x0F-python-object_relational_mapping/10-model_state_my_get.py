@@ -12,9 +12,10 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).order_by(State.id).first()
+    row = session.query(State).filter_by(
+        name=keys[4]).order_by(State.id).first()
     if (row is None):
-        print("Nothing")
+        print("Not found")
     else:
-        print('{}: {}'.format(row.id, row.name))
+        print(row.id)
     session.close()
