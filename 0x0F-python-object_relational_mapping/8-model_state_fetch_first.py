@@ -9,6 +9,7 @@ if __name__ == '__main__':
     db_url = 'mysql+pymysql://{}:{}@localhost/{}'.format(
         keys[1], keys[2], keys[3])
     engine = create_engine(db_url)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
     row = session.query(State).order_by(State.id).first()
