@@ -14,3 +14,4 @@ if __name__ == '__main__':
     session = Session()
     row = session.query(State).order_by(State.id).first()
     print('{}: {}'.format(row.id, row.name))
+    session.close()

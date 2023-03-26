@@ -16,3 +16,4 @@ if __name__ == '__main__':
     for row in data:
         if ('a' in row.name):
             print('{}: {}'.format(row.id, row.name))
+    session.close()

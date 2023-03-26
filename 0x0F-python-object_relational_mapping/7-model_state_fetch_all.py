@@ -15,3 +15,4 @@ if __name__ == '__main__':
     data = session.query(State).order_by(State.id).all()
     for row in data:
         print('{}: {}'.format(row.id, row.name))
+    session.close()
