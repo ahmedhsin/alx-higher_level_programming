@@ -13,8 +13,12 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     row = session.query(State).order_by(State.id).first()
+<<<<<<< HEAD
     print(row)
     if (row == None):
+=======
+    if (len(row) == 0):
+>>>>>>> 659908eb641985119198cc8451f97800b59e09ce
         print("Nothing")
     else:
         print('{}: {}'.format(row.id, row.name))
