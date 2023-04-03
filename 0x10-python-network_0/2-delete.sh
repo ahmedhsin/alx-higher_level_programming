@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 #delete request
 curl -X DELETE "$1"
