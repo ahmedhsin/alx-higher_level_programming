@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Start of the program"""
-    url = sys.argv[2]
+    url = sys.argv[1]
     with urllib.request.urlopen(url) as response:
         print(response.getheader("X-Request-Id"))
 
