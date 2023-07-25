@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-const api = 'https://swapi-api.alx-tools.com/api/films/';
+const api = process.argv[2];
 const doLogic = (err, res, body) => {
   if (err) console.log(err);
   const films = JSON.parse(body).results;
